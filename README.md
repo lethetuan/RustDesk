@@ -9,13 +9,13 @@ sudo ufw allow 21115:21119/tcp
 sudo ufw allow 21116/udp
 sudo ufw enable
 ```
-** Để kiểm tra bước này đã thành công, chạy lệnh ```bash sudo ufw status```. Bạn sẽ thấy trạng thái là "active" và danh sách các cổng 22, 21115-21119 (tcp), 21116 (udp) được dán nhãn "ALLOW".
+** Để kiểm tra bước này đã thành công, chạy lệnh ``` sudo ufw status```. Bạn sẽ thấy trạng thái là "active" và danh sách các cổng 22, 21115-21119 (tcp), 21116 (udp) được dán nhãn "ALLOW".
 2. Cài đặt Docker và Docker Compose để cô lập môi trường chạy các dịch vụ của RustDesk.
 ```bash
 sudo apt install docker.io docker-compose -y
 sudo systemctl enable --now docker
 ```
-Để xác nhận Docker đã được cài đặt và đang hoạt động, hãy chạy lệnh ```docker --version.``` Hệ thống sẽ trả về thông tin phiên bản Docker hiện tại.
+** Để xác nhận Docker đã được cài đặt và đang hoạt động, hãy chạy lệnh ```docker --version.``` Hệ thống sẽ trả về thông tin phiên bản Docker hiện tại.
 3. Tạo cấu hình RustDesk bằng các thiết lập file docker-compose.yml. Tạo một thư mục riêng biệt cho RustDesk và tạo file cấu hình.
 
 ```bash
