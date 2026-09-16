@@ -15,8 +15,8 @@ sudo ufw enable
 Chạy lệnh thiết lập kho lưu trữ của Docker. Cài đặt khóa bảo mật và đường dẫn tải. Bước này giúp máy chủ của bạn nhận diện và tin cậy nguồn tải từ Docker:
 
 ```bash
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg -y
+sudo apt update
+sudo apt install ca-certificates curl gnupg -y
 
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
