@@ -5,6 +5,11 @@
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
+
+cài đặt dịch vụ đồng bộ thời gian
+
+```bash
 sudo apt install systemd-timesyncd -y
 sudo systemctl enable --now systemd-timesyncd
 ```
@@ -24,7 +29,7 @@ sudo ufw enable
 Chạy lệnh thiết lập kho lưu trữ của Docker. Cài đặt khóa bảo mật và đường dẫn tải. Bước này giúp máy chủ của bạn nhận diện và tin cậy nguồn tải từ Docker:
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 sudo apt install ca-certificates curl gnupg -y
 
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -40,7 +45,7 @@ echo \
 Sau khi đã thêm nguồn, bạn tiến hành cài đặt các gói lõi Docker và Compose v2:
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
