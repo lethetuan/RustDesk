@@ -55,24 +55,16 @@ Dán nội dung sau vào file docker-compose.yml. Lưu ý: Bạn phải thay th�
 
 ```bash
 version: '3'
-networks:
-  rustdesk-net:
-    external: false
 services:
   hbbs:
     container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
     image: rustdesk/rustdesk-server:latest
+    network_mode: "host"
     command: hbbs -r ĐỊA_CHỈ_IP_SERVER_LINUX:21117 -k _
     volumes:
       - ./data:/root
     environment:
-      - TZ=Asia/Ho_Chi_Minh # Hỗ trợ xem log theo giờ VN
-    networks:
-      - rustdesk-net
+      - TZ=Asia/Ho_Chi_Minh
     depends_on:
       - hbbr
     restart: unless-stopped
@@ -85,18 +77,16 @@ services:
       options:
         max-size: "20m"
         max-file: "3"
+        
   hbbr:
     container_name: hbbr
-    ports:
-      - 21117:21117
     image: rustdesk/rustdesk-server:latest
+    network_mode: "host"
     command: hbbr -k _
     volumes:
       - ./data:/root
     environment:
       - TZ=Asia/Ho_Chi_Minh
-    networks:
-      - rustdesk-net
     restart: unless-stopped
     ulimits:
       nofile:
