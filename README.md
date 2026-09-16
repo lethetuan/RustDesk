@@ -5,11 +5,11 @@
 ### 1. Đầu tiên, cập nhật các gói phần mềm và mở các cổng mạng mà RustDesk yêu cầu.
 ```bash
 sudo apt update && sudo apt upgrade -y
-sudo ufw allow 21115:21119/tcp
+sudo ufw allow 21115:21117/tcp
 sudo ufw allow 21116/udp
 sudo ufw enable
 ```
-** Để kiểm tra bước này đã thành công, chạy lệnh ``` sudo ufw status```. Bạn sẽ thấy trạng thái là "active" và danh sách các cổng 22, 21115-21119 (tcp), 21116 (udp) được dán nhãn "ALLOW".
+** Để kiểm tra bước này đã thành công, chạy lệnh ``` sudo ufw status```. Bạn sẽ thấy trạng thái là "active" và danh sách các cổng 22, 21115-21117 (tcp), 21116 (udp) được dán nhãn "ALLOW".
 ### 2. Cài đặt Docker và Docker Compose để cô lập môi trường chạy các dịch vụ của RustDesk.
 ```bash
 sudo apt install docker.io docker-compose -y
