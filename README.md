@@ -1,8 +1,7 @@
 # Chi tiết các bước triển khai RustDesk Server lên Ubuntu Linux 
 Để cài đặt RustDesk Server chuẩn bảo mật và hạn chế tối đa lỗi phát sinh trong tương lai, phương án tốt nhất là sử dụng Docker. Cách này giúp cô lập môi trường của RustDesk khỏi hệ điều hành, ngăn chặn xung đột phần mềm và dễ dàng sao lưu hoặc nâng cấp sau này.
 
-## Cập nhật hệ thống và cấu hình Tường lửa (UFW) để bảo mật cổng mạng cho Server. 
-### 1. Đầu tiên, cập nhật các gói phần mềm và mở các cổng mạng mà RustDesk yêu cầu.
+### 1. Đầu tiên, cập nhật các gói phần mềm và mở các cổng mạng Tường lửa (UFW) mà RustDesk yêu cầu.
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo ufw allow 21115:21117/tcp
