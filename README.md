@@ -2,6 +2,15 @@
 Để cài đặt RustDesk Server chuẩn bảo mật và hạn chế tối đa lỗi phát sinh trong tương lai, phương án tốt nhất là sử dụng Docker. Cách này giúp cô lập môi trường của RustDesk khỏi hệ điều hành, ngăn chặn xung đột phần mềm và dễ dàng sao lưu hoặc nâng cấp sau này.
 
 ### 1. Đầu tiên, cập nhật các gói phần mềm và mở các cổng mạng Tường lửa (UFW) mà RustDesk yêu cầu.
+
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install systemd-timesyncd -y
+sudo systemctl enable --now systemd-timesyncd
+```
+
+mở các cổng mạng Tường lửa (UFW)
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo ufw allow 22/tcp
