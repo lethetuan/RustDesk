@@ -51,7 +51,7 @@ Sau đó lưu trữ file này lại nhé.
 @echo off
 REM --- BUOC 1: Kiem tra xem may da cai RustDesk chua ---
 REM Neu file rustdesk.exe da ton tai, bo qua buoc cai dat (nhay den phan copy cau hinh)
-IF EXIST "C:\Program Files\RustDesk\rustdesk.exe" GOTO copy_config
+IF EXIST "C:\Program Files\RustDesk\RustDesk.exe" GOTO copy_config
 
 REM --- BUOC 2: Cai dat ngam file MSI (Bo lenh timeout) ---
 REM Lenh "start /wait" bat buoc he thong cho cai dat xong 100% moi di tiep
@@ -64,8 +64,11 @@ net stop RustDesk
 REM --- BUOC 4: Tao thu muc (phong truong hop chua co) ---
 if not exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config" mkdir "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config"
 
-REM --- BUOC 5: Copy de cau hinh chuan vao cac may tinh client moi cai dat ---
-copy /Y "\\dc01\Share\Config\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
+REM --- BUOC 5: Chép dè c?u hình chu?n ---
+copy /Y "\\dc01\Share\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
+
+REM --- 4. Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
+"C:\Program Files\RustDesk\RustDesk.exe" --password "Matkhauremote@1234567"
 
 REM --- BUOC 6: Khoi dong lai Service ---
 net start RustDesk
