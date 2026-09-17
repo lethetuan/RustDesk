@@ -19,7 +19,8 @@ Chúng ta sẽ điền mật khẩu cho ứng dụng. Mỗi lần kết nối s�
 <img width="1233" height="723" alt="image" src="https://github.com/user-attachments/assets/259ac18c-b273-4bd3-a40c-2589a1a41489" />
 
 Lăn chuột xuống dưới để tiếp tục cài đặt "Bảo mật". Tại mục "Bảo mật" ở dưới cùng chúng ta sẽ click theo thứ tự và tại nút tích số 6 chúng ta sẽ đặt mã PIN. Mã PIN này dùng để quản lý các cài đặt trong mục "Bảo mật". nếu muốn thay đổi cấu hình trong ứng dụng bắt buộc phải nhập mã PIN này. Nếu không có mã PIN sẽ không thay đổi cập nhật được.
-<img width="919" height="757" alt="image" src="https://github.com/user-attachments/assets/8ca09e2c-d9a3-4c87-91e6-8b3145bab345" />
+
+<img width="919" height="757" alt="image" src="https://github.com/user-attachments/assets/5da0aa7f-dc19-4f93-917b-6d99541cd916" />
 
 Sau khi thiết lập mã PIN xong chúng ta chuyển xuống cấu hình "Mạng". Tại đây chúng ta sẽ click vào nút "Mở khóa cài đặt mạng" và nhập mã PIN mới thiết lập ở trên để cài đặt các thông số mạng. 
 
@@ -38,9 +39,10 @@ Tại mục cấu hình "Hiển thị" chúng ta cấu hình như hình dưới.
 
 Chúng ta sẽ tiến hành lưu trữ lại cấu hình vừa mới thiết lập bằng cách truy cập đường dẫn : C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config
 Sau đó lưu trữ file này lại nhé.
+
 <img width="781" height="403" alt="image" src="https://github.com/user-attachments/assets/d7f54da1-8763-4482-af27-d9826d49c79e" />
 
-
+<img width="949" height="731" alt="image" src="https://github.com/user-attachments/assets/ac846317-7c55-4cbd-9f2d-03eda342dea9" />
 ### Bước 2: Thực hiện trên Domain Controller để triển khai ứng dụng đến hàng loạt máy tính trong hệ thống
 
 1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\, phân quyền đọc cho Domain Computers. Tải file cài đặt .msi và Chép file rustdesk-1.4.9-x86_64.msi cùng file .toml vào thư mục Share. lưu đoạn mã .bat trên thành file Install_RustDesk.bat vào thư mục này. Lưu ý phải thay đổi các thông tin trong file này cho phù hợp với hệ thống của các bạn.
@@ -62,7 +64,7 @@ net stop RustDesk
 REM --- BUOC 4: Tao thu muc (phong truong hop chua co) ---
 if not exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config" mkdir "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config"
 
-REM --- BUOC 5: Chép dè c?u hình chu?n ---
+REM --- BUOC 5: Copy de cau hinh chuan vao cac may tinh client moi cai dat ---
 copy /Y "\\dc01\Share\Config\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
 
 REM --- BUOC 6: Khoi dong lai Service ---
@@ -78,10 +80,10 @@ Khai báo file .bat vào GPO: Trong tab Scripts, bấm nút Show Files.... Một
 
 3. Áp dụng chính sách và Kiểm tra: Tại máy tính Client.Bật nguồn một máy tính trạm bất kỳ trong Domain. Quá trình khởi động sẽ chậm hơn bình thường một chút ở màn hình "Please wait..." do chạy ngầm trình cài đặt. Khi đăng nhập vào Windows, hãy kiểm tra xem biểu tượng RustDesk đã xuất hiện ở khay hệ thống và nhận đúng ID server chưa. (Bạn cũng có thể chạy lệnh gpupdate /force trong CMD trước khi khởi động lại máy để ép Client cập nhật Policy mới nhất).
 
-<img width="949" height="731" alt="image" src="https://github.com/user-attachments/assets/ac846317-7c55-4cbd-9f2d-03eda342dea9" />
 
 
-<img width="919" height="757" alt="image" src="https://github.com/user-attachments/assets/5da0aa7f-dc19-4f93-917b-6d99541cd916" />
+
+
 
 
 
