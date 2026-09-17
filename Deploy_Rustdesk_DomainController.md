@@ -42,7 +42,6 @@ Sau đó lưu trữ file này lại nhé.
 
 <img width="781" height="403" alt="image" src="https://github.com/user-attachments/assets/d7f54da1-8763-4482-af27-d9826d49c79e" />
 
-<img width="949" height="731" alt="image" src="https://github.com/user-attachments/assets/ac846317-7c55-4cbd-9f2d-03eda342dea9" />
 ### Bước 2: Thực hiện trên Domain Controller để triển khai ứng dụng đến hàng loạt máy tính trong hệ thống
 
 1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\, phân quyền đọc cho Domain Computers. Tải file cài đặt .msi và Chép file rustdesk-1.4.9-x86_64.msi cùng file .toml vào thư mục Share. lưu đoạn mã .bat trên thành file Install_RustDesk.bat vào thư mục này. Lưu ý phải thay đổi các thông tin trong file này cho phù hợp với hệ thống của các bạn.
