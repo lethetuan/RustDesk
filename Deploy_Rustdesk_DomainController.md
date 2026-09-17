@@ -11,9 +11,10 @@ Tinh chỉnh cài đặt trong mục "Chung" theo nhu cầu sử dụng
 Tại mục "Bảo mật" chúng ta sẽ chọn Quyền với mục "Toàn quyền truy cập"
 <img width="977" height="597" alt="image" src="https://github.com/user-attachments/assets/75e5f65f-4b51-4071-9d79-ae7c75445225" />
 
-Lăn chuột xuống dưới để tiếp tục cài đặt "Bảo mật". Tại mục mật khẩu chúng ta chọn "Dùng mật khẩu vĩnh viễn" và click vào nút "Đặt mật khẩu vĩnh viễn".
+Lăn chuột xuống dưới để tiếp tục cài đặt "Bảo mật". Mục mật khẩu chọn "Chấp nhận phiên qua cả 2" để cho phép remote bằng địa chỉ IP và ID ứng dụng. CLick "Dùng mật khẩu vĩnh viễn" để cài đặt mật khẩu cho ứng dụng dụng
 
-<img width="945" height="751" alt="image" src="https://github.com/user-attachments/assets/d6016c08-1ae8-4889-8f99-ab0eb47d60f2" />
+<img width="777" height="577" alt="image" src="https://github.com/user-attachments/assets/aed9d0b2-0471-4e74-af4b-e7277537f184" />
+
 
 Chúng ta sẽ điền mật khẩu cho ứng dụng. Mỗi lần kết nối sẽ dùng mật khẩu này để kết nối đến máy tính cần remote
 <img width="1233" height="723" alt="image" src="https://github.com/user-attachments/assets/259ac18c-b273-4bd3-a40c-2589a1a41489" />
