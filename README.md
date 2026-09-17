@@ -68,7 +68,6 @@ sudo nano docker-compose.yml
 Dán nội dung sau vào file docker-compose.yml. Lưu ý: Bạn phải thay thế ĐỊA_CHỈ_IP_SERVER_LINUX bằng IP thật của server trước khi lưu.
 
 ```bash
-version: '3'
 services:
   hbbs:
     container_name: hbbs
@@ -132,12 +131,11 @@ Chúng ta sẽ lưu trữ nội dung key này lại và dùng nó để cấu h�
 Di chuyển đến thư mục /opt/rustdesk/data và xem danh sách các file trong thư mục này:
 
 ```bash
-cd /opt/rustdesk/data
-ls -l  
+sudo ls -l /opt/rustdesk/data
 ```
-Thực hiện đọc file id_ed25519.pub bằng lệnh cat dưới:
+Thực hiện đọc file id_ed25519.pub bằng lệnh cat với quyền root dưới:
 ```bash
-cat /opt/rustdesk/data/id_ed25519.pub
+sudo cat /opt/rustdesk/data/id_ed25519.pub
 ```
 <img width="1329" height="171" alt="image" src="https://github.com/user-attachments/assets/9c5fc022-4679-4910-8594-6a48124c3e1a" />
 
