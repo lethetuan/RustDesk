@@ -7,7 +7,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
-cài đặt dịch vụ đồng bộ thời gian
+Cài đặt dịch vụ đồng bộ thời gian và thiết lập tự khởi động dịch vụ đồng bộ thời gian cùng hệ thống
 
 ```bash
 sudo apt install systemd-timesyncd -y
@@ -55,8 +55,8 @@ Cấu hình khởi động cùng hệ thống. Tự động chạy lại docker 
 sudo systemctl enable --now docker
 ```
 
-** Để xác nhận bạn đã cài đặt đúng phiên bản v2, hãy chạy lệnh kiểm tra:  ```docker compose version``` Hệ thống sẽ trả về thông tin phiên bản Docker hiện tại.
-(Nếu cài đặt thành công, hệ thống sẽ trả về kết quả có dạng: Docker Compose version v2.x.x)
+** Để xác nhận bạn đã cài đặt đúng phiên bản v5, hãy chạy lệnh kiểm tra:  ```docker compose version``` Hệ thống sẽ trả về thông tin phiên bản Docker hiện tại.
+(Nếu cài đặt thành công, hệ thống sẽ trả về kết quả có dạng: Docker Compose version v5.x.x)
 
 ### 3. Tạo cấu hình RustDesk bằng các thiết lập file docker-compose.yml. Tạo một thư mục riêng biệt cho RustDesk và tạo file cấu hình.
 
@@ -124,21 +124,30 @@ Kiểm tra hệ thống của bạn đã cài đặt và khởi động thành c
 sudo docker ps
 ```
 Nếu bạn thấy danh sách hiện ra hai container có tên là hbbs và hbbr với trạng thái "Up" -> Cài đặt thành công.
+<img width="1703" height="115" alt="image" src="https://github.com/user-attachments/assets/300fb360-40a2-4bcf-b5d5-84778e56388f" />
+
+
 Mặc định sẽ có file *.pub được lưu trữ trong thư mục /opt/rustdesk/data/ chúng ta sẽ dùng lệnh cat để đọc file này để xem nội dung key trong file.
 Chúng ta sẽ lưu trữ nội dung key này lại và dùng nó để cấu hình trong ứng dụng RustDesk được cài trên máy tính của Client. 
-Lệnh để đọc file *.pub
+Di chuyển đến thư mục /opt/rustdesk/data và xem danh sách các file trong thư mục này:
 
 ```bash
 cd /opt/rustdesk/data
 ls -l  
+```
+Thực hiện đọc file id_ed25519.pub bằng lệnh cat dưới:
+```bash
 cat /opt/rustdesk/data/id_ed25519.pub
 ```
+<img width="1329" height="171" alt="image" src="https://github.com/user-attachments/assets/9c5fc022-4679-4910-8594-6a48124c3e1a" />
+
 
 
 
 ### 5. Cài đặt ứng dụng RustDesk lên máy tính client của các end-user.
 
 Truy cập vào trang chủ : https://rustdesk.com/ để tải file và cài đặt lên máy tính. Sau khi cài đặt chúng ta bấm vào nút 3 chấm tại dòng ID như hình dưới để cấu hình
+
 <img width="790" height="600" alt="image" src="https://github.com/user-attachments/assets/50e66086-fa29-4489-845c-be562677ac12" />
 
 Click vào chức năng "Network" sau đó click vào ID/Relay server để cấu hình.
