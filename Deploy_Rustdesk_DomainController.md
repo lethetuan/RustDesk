@@ -61,14 +61,18 @@ start /wait msiexec.exe /i "\\dc01\Share\rustdesk-1.4.9-x86_64.msi" /qn
 REM --- BUOC 3: Tam dung Service de tranh loi file dang su dung ---
 net stop RustDesk
 
+REM --- Xoa toan bo thu muc config truoc khi tao lai ---
+if exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config" rmdir /s /q "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config"
+
 REM --- BUOC 4: Tao thu muc (phong truong hop chua co) ---
 if not exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config" mkdir "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config"
+
 
 REM --- BUOC 5: Chép dè c?u hình chu?n ---
 copy /Y "\\dc01\Share\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
 
 REM --- 4. Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
-"C:\Program Files\RustDesk\RustDesk.exe" --password "Matkhauremote@1234567"
+"C:\Program Files\RustDesk\RustDesk.exe" --password "Bitis@123"
 
 REM --- BUOC 6: Khoi dong lai Service ---
 net start RustDesk
