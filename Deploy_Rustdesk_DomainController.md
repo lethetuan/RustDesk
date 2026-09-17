@@ -48,6 +48,7 @@ Sau đó copy tập tin RustDesk2.toml và lưu trữ lại.
 1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\ phân quyền Read cho Domain User. Tải file cài đặt rustdesk-1.4.9-x86_64.msi và sao chép file rustdesk-1.4.9-x86_64.msi cùng file RustDesk2.toml vào thư mục Share. Sau đó lưu đoạn mã dưới thành file Install_RustDesk.bat vào thư mục bất kỳ. Lưu ý phải thay đổi các thông tin trong file Install_RustDesk.bat này cho phù hợp với hệ thống của các bạn.
 
 ```bash
+
 @echo off
 REM --- BUOC 1: Kiem tra xem may da cai RustDesk chua ---
 REM Neu file rustdesk.exe da ton tai, bo qua buoc cai dat (nhay den phan copy cau hinh)
@@ -67,15 +68,18 @@ if exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\confi
 REM --- BUOC 4: Tao thu muc (phong truong hop chua co) ---
 if not exist "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config" mkdir "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config"
 
-
 REM --- BUOC 5: Chép dè c?u hình chu?n ---
 copy /Y "\\dc01\Share\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
 
-REM --- 4. Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
-"C:\Program Files\RustDesk\RustDesk.exe" --password "123456"
-
-REM --- BUOC 6: Khoi dong lai Service ---
+REM --- BUOC 6: Khoi dong lai Service TRUOC ---
 net start RustDesk
+
+REM --- Cho 3 giay de Service khoi dong hoan toan roi moi doi mat khau ---
+timeout /t 3 /nobreak >nul
+
+REM --- BUOC 7: Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
+"C:\Program Files\RustDesk\RustDesk.exe" --password "MatkhauRemoteChung@789"
+
 ```
 
 
