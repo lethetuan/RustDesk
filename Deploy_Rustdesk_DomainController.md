@@ -45,7 +45,7 @@ Sau đó copy tập tin RustDesk2.toml và lưu trữ lại.
 
 ### Bước 2: Thực hiện trên Domain Controller để triển khai ứng dụng đến hàng loạt máy tính trong hệ thống
 
-1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\ phân quyền Read cho Domain User. Tải file cài đặt rustdesk-1.4.9-x86_64.msi và sao chép file rustdesk-1.4.9-x86_64.msi cùng file RustDesk2.toml vào thư mục Share. Sau đó lưu đoạn mã dưới thành file Install_RustDesk.bat vào thư mục bất kỳ. Lưu ý phải thay đổi các thông tin trong file Install_RustDesk.bat này cho phù hợp với hệ thống của các bạn.
+1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\ phân quyền Read cho Domain Computers (hoặc Authenticated Users). Tải file cài đặt rustdesk-1.4.9-x86_64.msi và sao chép file rustdesk-1.4.9-x86_64.msi cùng file RustDesk2.toml vào thư mục Share. Sau đó lưu đoạn mã dưới thành file Install_RustDesk.bat vào thư mục bất kỳ. Lưu ý phải thay đổi các thông tin trong file Install_RustDesk.bat này cho phù hợp với hệ thống của các bạn.
 
 ```bash
 
@@ -83,7 +83,7 @@ REM --- BUOC 7: Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
 ```
 
 
-2.Tạo Group Policy Object (GPO) mới: Server Manager.Mở Group Policy Management (gpmc.msc). Click chuột phải vào tên Domain (hoặc OU chứa các máy tính cần cài đặt) -> Chọn Create a GPO in this domain, and Link it here.... Đặt tên cho GPO (ví dụ: Deploy_Software).
+2.Tạo Group Policy Object (GPO) mới: Server Manager. Mở Group Policy Management (gpmc.msc). Click chuột phải vào tên Domain (hoặc OU chứa các máy tính cần cài đặt) -> Chọn Create a GPO in this domain, and Link it here.... Đặt tên cho GPO (ví dụ: Deploy_Software).
 <img width="1439" height="655" alt="image" src="https://github.com/user-attachments/assets/fe7bebf1-4f21-4e3f-9e0f-da7d5f5a47e2" />
 
 
