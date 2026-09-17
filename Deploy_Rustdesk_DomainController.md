@@ -71,11 +71,28 @@ net start RustDesk
 ```
 
 
-2.Tạo Group Policy Object (GPO) mới: Server Manager.Mở Group Policy Management (gpmc.msc). Click chuột phải vào tên Domain (hoặc OU chứa các máy tính cần cài đặt) -> Chọn Create a GPO in this domain, and Link it here.... Đặt tên cho GPO (ví dụ: Software_Deploy_RustDesk).
+2.Tạo Group Policy Object (GPO) mới: Server Manager.Mở Group Policy Management (gpmc.msc). Click chuột phải vào tên Domain (hoặc OU chứa các máy tính cần cài đặt) -> Chọn Create a GPO in this domain, and Link it here.... Đặt tên cho GPO (ví dụ: Deploy_Software).
+<img width="1439" height="655" alt="image" src="https://github.com/user-attachments/assets/fe7bebf1-4f21-4e3f-9e0f-da7d5f5a47e2" />
+
 
 Cấu hình Startup Script:  Click chuột phải vào GPO vừa tạo -> Edit. Điều hướng theo đường dẫn: Computer Configuration -> Policies -> Windows Settings -> Scripts (Startup/Shutdown). Nhấp đúp chuột vào mục Startup. 
 
+<img width="1179" height="693" alt="image" src="https://github.com/user-attachments/assets/e850193b-6a97-43cc-9bde-d5c00420c3ca" />
+
 Khai báo file .bat vào GPO: Trong tab Scripts, bấm nút Show Files.... Một thư mục ẩn của chính sách sẽ hiện ra. Chép file Install_RustDesk.bat (từ thư mục chia sẻ ở bước trên) dán vào thư mục ẩn này. Sau đó, quay lại cửa sổ Startup Properties, bấm Add..., bấm Browse... và chọn đúng file .bat vừa chép vào. Bấm OK để lưu.
+
+<img width="605" height="559" alt="image" src="https://github.com/user-attachments/assets/a7a5db87-7495-4f62-a4a1-bb2f3a2bbd27" />
+
+Chép file Install_RustDesk.bat (từ thư mục chia sẻ ở bước trên) dán vào thư mục ẩn này
+<img width="1127" height="511" alt="image" src="https://github.com/user-attachments/assets/20348259-f285-475b-aef9-437b5f055f8a" />
+
+<img width="605" height="561" alt="image" src="https://github.com/user-attachments/assets/0bfab09f-03ac-40da-8f3f-eeff56c8c1d1" />
+
+<img width="941" height="577" alt="image" src="https://github.com/user-attachments/assets/3d57fa92-c90f-42d1-8e45-011c5d1ca62c" />
+
+<img width="667" height="575" alt="image" src="https://github.com/user-attachments/assets/688cd50e-98f0-4407-b83e-165ca56049f8" />
+
+
 
 3. Áp dụng chính sách và Kiểm tra: Tại máy tính Client.Bật nguồn một máy tính trạm bất kỳ trong Domain. Quá trình khởi động sẽ chậm hơn bình thường một chút ở màn hình "Please wait..." do chạy ngầm trình cài đặt. Khi đăng nhập vào Windows, hãy kiểm tra xem biểu tượng RustDesk đã xuất hiện ở khay hệ thống và nhận đúng ID server chưa. (Bạn cũng có thể chạy lệnh gpupdate /force trong CMD trước khi khởi động lại máy để ép Client cập nhật Policy mới nhất).
 
