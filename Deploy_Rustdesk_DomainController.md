@@ -39,13 +39,13 @@ Tại mục cấu hình "Hiển thị" chúng ta cấu hình như hình dưới.
 <img width="1097" height="763" alt="image" src="https://github.com/user-attachments/assets/f7f4db59-e95a-44ed-a907-59728cd94baa" />
 
 Chúng ta sẽ tiến hành lưu trữ lại cấu hình vừa mới thiết lập bằng cách truy cập đường dẫn : C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config
-Sau đó lưu trữ file này lại nhé.
+Sau đó copy tập tin RustDesk2.toml và lưu trữ lại.
 
 <img width="781" height="403" alt="image" src="https://github.com/user-attachments/assets/d7f54da1-8763-4482-af27-d9826d49c79e" />
 
 ### Bước 2: Thực hiện trên Domain Controller để triển khai ứng dụng đến hàng loạt máy tính trong hệ thống
 
-1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\, phân quyền đọc cho Domain Computers. Tải file cài đặt .msi và Chép file rustdesk-1.4.9-x86_64.msi cùng file .toml vào thư mục Share. lưu đoạn mã .bat trên thành file Install_RustDesk.bat vào thư mục này. Lưu ý phải thay đổi các thông tin trong file này cho phù hợp với hệ thống của các bạn.
+1. Tạo một thư mục chia sẻ (ví dụ: Share) trong ổ đĩa C:\ phân quyền Read cho Domain User. Tải file cài đặt rustdesk-1.4.9-x86_64.msi và sao chép file rustdesk-1.4.9-x86_64.msi cùng file RustDesk2.toml vào thư mục Share. Sau đó lưu đoạn mã dưới thành file Install_RustDesk.bat vào thư mục bất kỳ. Lưu ý phải thay đổi các thông tin trong file Install_RustDesk.bat này cho phù hợp với hệ thống của các bạn.
 
 ```bash
 @echo off
