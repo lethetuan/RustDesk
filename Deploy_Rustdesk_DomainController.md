@@ -92,9 +92,14 @@ Chép file Install_RustDesk.bat (từ thư mục chia sẻ ở bước trên) d�
 
 <img width="667" height="575" alt="image" src="https://github.com/user-attachments/assets/688cd50e-98f0-4407-b83e-165ca56049f8" />
 
+<img width="603" height="561" alt="image" src="https://github.com/user-attachments/assets/8c2d3014-b9e6-4b67-9760-bb84734e9f33" />
 
 
-3. Áp dụng chính sách và Kiểm tra: Tại máy tính Client.Bật nguồn một máy tính trạm bất kỳ trong Domain. Quá trình khởi động sẽ chậm hơn bình thường một chút ở màn hình "Please wait..." do chạy ngầm trình cài đặt. Khi đăng nhập vào Windows, hãy kiểm tra xem biểu tượng RustDesk đã xuất hiện ở khay hệ thống và nhận đúng ID server chưa. (Bạn cũng có thể chạy lệnh gpupdate /force trong CMD trước khi khởi động lại máy để ép Client cập nhật Policy mới nhất).
+3. Áp dụng chính sách và Kiểm tra:
+Tại máy tính Client. Bật nguồn một máy tính trạm bất kỳ trong OU Domain vừa áp dụng Policy. Quá trình khởi động sẽ chậm hơn bình thường một chút ở màn hình "Please wait..." do chạy ngầm trình cài đặt. Khi đăng nhập vào Windows, hãy kiểm tra xem biểu tượng RustDesk đã xuất hiện ở khay hệ thống và nhận đúng ID server chưa. (Bạn cũng có thể chạy lệnh gpupdate /force trong CMD trước khi khởi động lại máy để ép Client cập nhật Policy mới nhất).
+
+<img width="525" height="269" alt="image" src="https://github.com/user-attachments/assets/5702b44b-4727-4b55-b3e7-2a8d714cd211" />
+
 
 
 
