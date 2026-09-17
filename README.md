@@ -119,16 +119,34 @@ Bấm Ctrl + O --> sau đó bấm Enter để lưu và Ctrl + X để thoát.
 ```bash   
 sudo docker compose up -d
 ```
-Chờ đợi để hệ thống tạo khóa tự động, sau đó đọc khóa công khai (Public Key) bằng lệnh:
-
-```bash  
-cat /opt/rustdesk/data/id_ed25519.pub
-```
-Chúng ta sẽ lưu  trữ key này lại và dùng nó để cấu hình trong ứng dụng RustDesk được cài trên máy tính của Client. 
-
-
-### 5. Kiểm tra hệ thống của bạn đã cài đặt và khởi động thành công hay chưa bằng lệnh: 
+Kiểm tra hệ thống của bạn đã cài đặt và khởi động thành công hay chưa bằng lệnh: 
 ```bash  
 sudo docker ps
 ```
 Nếu bạn thấy danh sách hiện ra hai container có tên là hbbs và hbbr với trạng thái "Up" -> Cài đặt thành công.
+Mặc định sẽ có file *.pub được lưu trữ trong thư mục /opt/rustdesk/data/ chúng ta sẽ dùng lệnh cat để đọc file này để xem nội dung key trong file.
+Chúng ta sẽ lưu trữ nội dung key này lại và dùng nó để cấu hình trong ứng dụng RustDesk được cài trên máy tính của Client. 
+Lệnh để đọc file *.pub
+
+```bash
+cd /opt/rustdesk/data
+ls -l  
+cat /opt/rustdesk/data/id_ed25519.pub
+```
+
+
+
+### 5. Cài đặt ứng dụng RustDesk lên máy tính client của các end-user.
+
+Truy cập vào trang chủ : https://rustdesk.com/ để tải file và cài đặt lên máy tính. Sau khi cài đặt chúng ta bấm vào nút 3 chấm tại dòng ID như hình dưới để cấu hình
+<img width="790" height="600" alt="image" src="https://github.com/user-attachments/assets/50e66086-fa29-4489-845c-be562677ac12" />
+
+Click vào chức năng "Network" sau đó click vào ID/Relay server để cấu hình.
+<img width="919" height="761" alt="image" src="https://github.com/user-attachments/assets/daaafc9d-5795-46bd-8ac4-dafa8aa7eb46" />
+
+Điền thông tin cấu hình như địa chỉ IP của server, public key đã lưu trữ ở bước 4 và click vào nút OK để lưu.
+<img width="555" height="351" alt="image" src="https://github.com/user-attachments/assets/43b69adb-ae31-48f4-aa7f-d80e200dfeee" />
+
+Giờ chúng ta có thể sử dụng RustDesk để remote các máy tính client rồi.
+
+
