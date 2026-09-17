@@ -72,7 +72,7 @@ REM --- BUOC 5: Chép dè c?u hình chu?n ---
 copy /Y "\\dc01\Share\RustDesk2.toml" "C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\"
 
 REM --- 4. Thiet lap MAT KHAU REMOTE CHUNG bang dong lenh ---
-"C:\Program Files\RustDesk\RustDesk.exe" --password "Bitis@123"
+"C:\Program Files\RustDesk\RustDesk.exe" --password "123456"
 
 REM --- BUOC 6: Khoi dong lai Service ---
 net start RustDesk
