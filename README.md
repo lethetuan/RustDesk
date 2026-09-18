@@ -42,7 +42,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-Sau khi đã thêm nguồn, bạn tiến hành cài đặt các gói lõi Docker và Compose v2:
+Sau khi đã thêm nguồn, bạn tiến hành cài đặt các gói lõi Docker và Compose v5:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
